@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+window.onload = function(){
+    var canvas = document.getElementById("canvas");
+    canvas.width = 800;
+    canvas.height = 600;
+    var context = canvas.getContext("2d");
+    context.fillStyle="#FFF";
+    context.fillRect(0,0,800,600);
+    //------------裁切图像------------//
+    //在屏幕上绘制一个大方块
+    // context.fillStyle = "black";
+    // context.fillRect(10,10,200,200);
+    // context.save();
+    // context.beginPath();
+    // //裁剪画布从(0,0)点到(50,50)的正方形
+    // context.rect(0,0,50,50);
+    // context.clip();
+    // //红色圆
+    // context.beginPath();
+    // context.strokeStyle = "red";
+    // context.lineWidth = 5;
+    // context.arc(100,100,100,0,Math.PI * 2,false);
+    // //整圆
+    // context.stroke();
+    // context.closePath();
+    // context.restore();
+    // //再次裁切整个画布
+    // context.beginPath();
+    // context.rect(0,0,500,500);
+    // context.clip();
+    // //绘制一个没有裁切的蓝线
+    // context.beginPath();
+    // context.strokeStyle = "blue";
+    // context.lineWidth = 5;
+    // context.arc(100,100,50,0,Math.PI * 2,false);
+    // //整圆
+    // context.stroke();
+    // context.closePath();
+
+    //-----------绘制图像-----------//
+    // var img = new Image();
+    // img.src = "./img.png";
+    // img.onload = function(){
+    //     context.drawImage(img,200,50);
+    // }
+    //---------------创建相框------------//
+    context.beginPath();
+    context.moveTo(141, 446);
+    // context.bezierCurveTo(450,220,450,300,400,315);
+
+    // context.bezierCurveTo(350,300,350,220,400,260);
+    context.bezierCurveTo(80, 402, 65, 227, 136, 297);
+    context.bezierCurveTo(179, 424, 263, 213, 136, 297);
+    context.clip();
+    context.closePath();
+    var img = new Image();
+    img.src = "./img.png";
+    img.onload = function(){
+        context.drawImage(img,100,200,400,400);
+    }
+
+}
+</script>
+</html>

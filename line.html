@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas" style="border:1px solid #ddd;width:800px;height:600px;">canvas小动画</canvas>
+</body>
+<script type="text/javascript">
+  
+window.onload = function(){
+    //---------------------线条的绘制---------------------------------//
+    // var canvas = document.getElementById("canvas");
+    // canvas.width = 800;
+    // canvas.height = 600;
+    // var context = canvas.getContext("2d");
+
+    // context.beginPath();
+    // context.moveTo(100,100);//起点坐标
+    // // context.lineTo(600,600);//线段的终点坐标
+    // context.lineTo(300,300);
+    // context.lineTo(100,500);
+    // context.lineWidth = 5;
+    // context.strokeStyle = "red";
+    // context.stroke();
+
+    // context.beginPath();
+    // context.moveTo(300,100);
+    // context.lineTo(500,300);
+    // context.lineTo(300,500);
+    // context.lineWidth=5;
+    // context.strokeStyle='blue';
+    // context.stroke();
+
+    // context.beginPath();
+    // context.moveTo(500,100);
+    // context.lineTo(700,300);
+    // context.lineTo(500,500);
+    // context.lineWidth=5;
+    // context.strokeStyle="black";
+    // context.stroke();
+
+    //线条属性：（4个）
+    // var canvas = document.getElementById('canvas');
+    // canvas.width=800;
+    // canvas.height=800;
+    // var context = canvas.getContext("2d");
+    // context.lineWidth = 50;
+    // context.strokeStyle = "#1BAAAA";
+    //lineCap(butt、round、square)
+    // context.beginPath();
+    // context.moveTo(100,100);
+    // context.lineTo(700,100);
+    // context.lineCap="square";
+    // context.stroke();
+    // context.beginPath();
+    // context.moveTo(75,200);
+    // context.lineTo(675,200);
+    // context.lineCap="butt";
+    // context.stroke();
+    //lineJoin(miter、bevel、round)
+    // context.beginPath();
+    // context.moveTo(100,200);
+    // context.lineTo(400,300);
+    // context.lineTo(100,400);
+    // context.lineJoin = "miter";
+    // context.lineWidth = 10;
+    // context.strokeStyle = "#f00";
+    // context.stroke();
+
+    // context.beginPath();
+    // context.moveTo(200,200);
+    // context.lineTo(500,300);
+    // context.lineTo(200,400);
+    // context.lineWidth = 10;
+    // context.lineJoin = "bevel";
+    // context.strokeStyle = "#ff0";
+    // context.stroke();
+
+    // context.beginPath();
+    // context.moveTo(300,200);
+    // context.lineTo(700,300);
+    // context.lineTo(300,400);
+    // context.lineWidth = 10;
+    // context.lineJoin = "round";
+    // context.strokeStyle = "#0ff";
+    // context.stroke();
+    //miterLimit属性设置
+    // context.beginPath();
+    // context.moveTo(100,500);
+    // context.lineTo(400,600);
+    // context.lineTo(100,700);
+    // context.miterLimit = 1;
+    // context.lineJoin = "miter";
+    // context.lineWidth = 10;
+    // context.strokeStyle = "#f00";
+    // context.stroke();
+
+    //-------------------------------矩形的绘制----------------------------//
+    // var canvas = document.getElementById('canvas');
+    // canvas.width=800;
+    // canvas.height=600;
+    // var context = canvas.getContext('2d');
+    // context.beginPath();
+    // context.moveTo(100,100);
+    // context.lineTo(300,100);
+    // context.lineTo(300,300);
+    // context.lineTo(100,300);
+    // // context.lineTo(100,100);
+    // context.closePath();//使用closePath可以不用画最后一笔
+    // context.fillStyle = "yellow";//选择油漆桶的颜色
+    // context.lineWidth=5;
+    // context.strokeStyle="green";
+    // context.fill();//确定填充
+    // context.stroke();
+
+    //多个矩形绘制的函数封装
+    // var canvas = document.getElementById('canvas');
+    // canvas.width = 800;
+    // canvas.height= 600;
+    // var context = canvas.getContext('2d');
+    // drawRect(context,100,50,300,200,'#f00',5,'#0f0');
+    // drawRect(context,50,100,200,400,'#ff0',10,'#00f');
+    // drawRect(context,200,200,50,50,'#f0f',2,'#0ff');
+
+    //使用rect()方法绘制矩形
+    // var canvas = document.getElementById('canvas');
+    // canvas.width=800;
+    // canvas.height = 600;
+    // var context = canvas.getContext('2d');
+    // context.rect(10,20,200,300);
+    // context.fillStyle="#f00";
+    // context.lineWidth = 5;
+    // context.strokeStyle = "#0f0";
+    // context.fill();
+    // context.stroke();
+    
+    //实例：
+    // var canvas = document.getElementById('canvas');
+    // canvas.width=800;
+    // canvas.height = 600;
+    // var context = canvas.getContext('2d');
+    // context.rect(0,0,800,600);
+    // context.fillStyle = "#AA9033";
+    // context.fill();
+    // context.beginPath();
+    // for(var i = 0;i<20;i++){
+    //     drawWhiteRect(context,200+10*i,100+10*i,400-20*i,400-20*i);
+    //     drawBlackRect(context,205+10*i,105+10*i,390-20*i,390-20*i);
+    // }
+    // context.beginPath();
+    // context.rect(395,295,5,5);
+    // context.fillStyle = "black";
+    // context.lineWidth = 5;
+    // context.fill();
+    // context.stroke();
+    
+    //颜色填充
+    var canvas = document.getElementById('canvas');
+    canvas.width=800;
+    canvas.height = 600;
+    var context = canvas.getContext("2d");
+    // context.rect(200,100,400,400);
+    //添加渐变色(线性渐变)
+    // var grd = context.createLinearGradient(200,300,600,300);
+    //为渐变色添加颜色
+    // grd.addColorStop(0,"black");
+    // grd.addColorStop(0.5,"white");
+    // grd.addColorStop(1,"black");
+    // context.fillStyle = grd;
+    // context.fill();
+    //快速绘制矩形
+    // context.strokeRect(200,50,300,50);
+    // context.strokeRect(200,100,150,50);
+    // context.strokeRect(200,150,450,50);
+    // context.fillRect(200,100,200,300);
+    //径向渐变
+    var grd = context.createRadialGradient(400,300,100,400,300,200);
+    //添加颜色断点
+    grd.addColorStop(0,"olive");
+    grd.addColorStop(0.25,"maroon");
+    grd.addColorStop(0.5,"aqua");
+    grd.addColorStop(0.75,"fuchsia");
+    grd.addColorStop(0.25,"teal");
+    //应用渐变
+    context.fillStyle = grd;
+    context.fillRect(100,100,600,400);
+    //图片填充
+    var img = new Image();
+    img.src = "img.png";
+    img.onload = function(){
+        var pattern = context.createPattern(img,'repeat');
+        context.fillStyle = pattern;
+        context.fillRect(0,0,800,600);
+    }
+}
+function drawWhiteRect(cxt,x,y,width,height){
+    cxt.beginPath();
+    cxt.rect(x,y,width,height);
+    cxt.lineWidth=5;
+    cxt.strokeStyle = "white";
+    cxt.stroke();
+}
+function drawBlackRect(cxt,x,y,width,height){
+    cxt.beginPath();
+    cxt.rect(x,y,width,height);
+    cxt.lineWidth = 5;
+    cxt.strokeStyle = "black";
+    cxt.stroke();
+}
+function drawRect(cxt,x,y,width,height,fillColor,borderWidth,borderColor){
+    cxt.beginPath();
+    // cxt.moveTo(x,y);
+    // cxt.lineTo(x+width,y);
+    // cxt.lineTo(x+width,y+height);
+    // cxt.lineTo(x,y+height);
+    // cxt.closePath();
+
+    cxt.rect(x,y,width,height);//用rect()方法可以不用closePath()方法
+    cxt.fillStyle = fillColor;
+    cxt.lineWidth=borderWidth;
+    cxt.strokeStyle = borderColor;
+    cxt.fill();
+    cxt.stroke();
+}
+</script>
+</html>

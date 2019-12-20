@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+</body>
+<script type="text/javascript">
+window.onload = function(){
+    var canvas = document.getElementById("canvas");
+    canvas.width = 800;
+    canvas.height = 600;
+    var context = canvas.getContext("2d");
+    context.fillStyle="#FFF";
+    context.fillRect(0,0,800,600);
+    // //1. 使用 `font` 设置字体
+    // context.font = "50px serif";
+    // //2. 使用 `fillStyle`设置字体颜色。
+    // context.fillStyle = "#00AAAA";
+    // //3. 使用 `fillText()`方法显示字体。
+    // context.fillText("《CANVAS--Draw on the Web》",50,300);
+
+    context.beginPath();
+    context.font = "50px Verdana";
+    var gradient = context.createLinearGradient(0,0,800,0);
+    gradient.addColorStop("0","magenta");
+    gradient.addColorStop("0.5","blue");
+    gradient.addColorStop("1.0","red");
+    context.fillStyle = gradient;
+    context.strokeStyle = "#00AAAA";
+    context.strokeText("airingursb.github.io",50,100);
+    context.fillText("airingursb.github.io",50,200);
+    //限制宽度
+    context.fillText("airingursb.github.io",50,300,200);
+    context.beginPath();
+    var img = new Image();
+    img.src = "./img.png";
+    img.onload = function(){
+        var pattern = context.createPattern(img,"repeat");
+        context.fillStyle = pattern;
+        context.fillText("airingursb.github.io",50,400);
+    }
+    context.beginPath();
+    context.fillStyle = "#00AAAA";
+    context.fillText("Airing的博客，欢迎访问",50,500);
+
+}
+</script>
+</html>
